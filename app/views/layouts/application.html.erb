@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TestApp3</title>
+  <title>TestApp</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "custom" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+
+  <header>
+    <div class="col-md-12 no-padding">
+      <div class="col-md-6">
+        <%= link_to "Main", root_path %>
+      </div>
+      <div class="col-md-6 text-right">
+        <div class="col-md-3">
+          <%= link_to "Countries", countries_path %>
+        </div>
+        <div class="col-md-3">
+          <%= link_to "Regions", regions_path %>
+        </div>
+        <div class="col-md-3">
+          <%= link_to "Cities", cities_path %>
+        </div>
+        <div class="col-md-3">
+          <%= link_to "Turbazas", turbazas_path %>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+<div class="container">
+  <%= yield %>
+</div>
+
 
 </body>
 </html>

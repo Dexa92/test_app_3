@@ -1,0 +1,34 @@
+<h1>List of turbazas</h1>
+
+<button class="btn btn-default">
+  <%= link_to "Add", new_turbaza_path %>
+</button>
+
+<table>
+  <% @turbazas.each do|turbaza| %>
+      <tr>
+        <td>
+          <%= turbaza.name %>
+        </td>
+        <td>
+          <%if turbaza.city_id == 0 %>
+              <%= City.find(turbaza.city_id + 1).name %>
+          <% else %>
+              <%= City.find(turbaza.city_id).name %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_turbaza_path(turbaza) %>
+        </td>
+        <td>
+          <%= link_to "Delete", turbaza, method: :delete %>
+        </td>
+  <% end %>
+  </tr>
+</table>
+
+
+<%= will_paginate @turbazas%>
+
+
+

@@ -1,0 +1,30 @@
+<h1>List of regions</h1>
+
+<button class="btn btn-default">
+  <%= link_to "Add", new_region_path %>
+</button>
+
+<table>
+  <% @regions.each do|region| %>
+      <tr>
+        <td>
+          <%= region.name %>
+        </td>
+        <td>
+          <%if region.country_id == 0 %>
+              <%= Country.find(region.country_id + 1).name %>
+          <% else %>
+              <%= Country.find(region.country_id).name %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_region_path(region) %>
+        </td>
+        <td>
+          <%= link_to "Delete", region, method: :delete %>
+        </td>
+  <% end %>
+  </tr>
+</table>
+
+<%= will_paginate @regions%>

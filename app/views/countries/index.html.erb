@@ -1,0 +1,23 @@
+<h1>List of countries</h1>
+
+<button class="btn btn-default">
+  <%= link_to "Add", new_country_path %>
+</button>
+
+<table>
+  <% @countries.each do|country| %>
+      <tr>
+        <td>
+          <%= country.name %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_country_path(country) %>
+        </td>
+        <td>
+          <%= link_to "Delete", country, method: :delete %>
+        </td>
+  <% end %>
+  </tr>
+</table>
+
+<%= will_paginate @countries %>

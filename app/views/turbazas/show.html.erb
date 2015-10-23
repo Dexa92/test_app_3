@@ -1,0 +1,22 @@
+<% provide(:title, @turbaza.name) %>
+<h1><%= @turbaza.name %></h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-4">
+      <button class="btn btn-default">
+        <%= link_to "Back to all cities", turbazas_path %>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-default">
+        <%= link_to "Edit", edit_turbaza_path %>
+      </button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-default">
+        <%= link_to "Delete", turbaza_path, method: :delete %>
+      </button>
+    </div>
+  </div>
+</div>

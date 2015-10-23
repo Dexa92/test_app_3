@@ -1,0 +1,30 @@
+<h1>List of cities</h1>
+
+<button class="btn btn-default">
+  <%= link_to "Add", new_city_path %>
+</button>
+
+<table>
+  <% @cities.each do|city| %>
+      <tr>
+        <td>
+          <%= city.name %>
+        </td>
+        <td><%if city.region_id == 0 %>
+              <%= Region.find(city.region_id + 1).name %>
+          <% else %>
+              <%= Region.find(city.region_id).name %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_city_path(city) %>
+        </td>
+        <td>
+          <%= link_to "Delete", city, method: :delete %>
+        </td>
+  <% end %>
+  </tr>
+</table>
+
+<%= will_paginate @cities%>
+
