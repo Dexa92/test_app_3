@@ -1,2 +1,20 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>Quantity of turbazas</h1>
+<% tmp_country = 0 %>
+<% @countries.each do|country| %>
+    <div class="col-md-3">
+    <% tmp_2 = 0 %>
+    <% tmp = 0 %>
+    <% country.regions.each do|region| %>
+        <% turbaza_in_region = 0 %>
+        <% region.cities.each do|city| %>
+            <%= city.name %> <%='(' + city.turbazas.count.to_s + ')' %>
+            <% tmp += city.turbazas.count %>
+        <% end %>
+        <% turbaza_in_region += tmp %>
+        <%= region.name %> <%= '(' + turbaza_in_region.to_s + ')' %>
+        <% tmp_2 += turbaza_in_region %>
+    <% end %>
+    <% tmp_country += tmp_2 %>
+    <%= country.name %> <%= '(' + tmp_country.to_s + ')' %>
+    </div>
+<% end %>
