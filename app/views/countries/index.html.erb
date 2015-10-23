@@ -5,8 +5,15 @@
 </button>
 
 <table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+  </tr>
   <% @countries.each do|country| %>
       <tr>
+        <td>
+          <%= country.id %>
+        </td>
         <td>
           <%= country.name %>
         </td>

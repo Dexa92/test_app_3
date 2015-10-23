@@ -5,8 +5,16 @@
 </button>
 
 <table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>country name</th>
+  </tr>
   <% @regions.each do|region| %>
       <tr>
+        <td>
+          <%= region.id %>
+        </td>
         <td>
           <%= region.name %>
         </td>

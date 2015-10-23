@@ -5,8 +5,16 @@
 </button>
 
 <table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>city name</th>
+  </tr>
   <% @turbazas.each do|turbaza| %>
       <tr>
+        <td>
+          <%= turbaza.id %>
+        </td>
         <td>
           <%= turbaza.name %>
         </td>
