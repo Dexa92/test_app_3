@@ -21,7 +21,7 @@ gem 'populator', require: false
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
-
+gem 'yaml_db'
 gem "taps", "~> 0.3.23"
 
 group :production do
