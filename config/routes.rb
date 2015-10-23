@@ -1,4 +1,4 @@
-TestApp2::Application.routes.draw do
+TestApp3::Application.routes.draw do
 
   resources :countries
   resources :regions
