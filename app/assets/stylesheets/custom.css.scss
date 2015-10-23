@@ -1,0 +1,15 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+  overflow-y: scroll;
+}
+
+td {
+  padding: 10px;
+}
+
+header {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
